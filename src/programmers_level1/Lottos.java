@@ -1,7 +1,7 @@
 package programmers_level1;
 
 import java.util.*;
-class Solution {
+class Lottos {
     public int[] solution(int[] lottos, int[] win_nums) {
 
         int zeroCnt = 0;
