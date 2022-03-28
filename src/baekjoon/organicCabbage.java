@@ -23,7 +23,6 @@ public class organicCabbage {
             M = sc.nextInt();
             N = sc.nextInt();
             K = sc.nextInt();
-            result = 0;
             cabbageList = new ArrayList<>();
             check = new boolean[K];
             for ( int i = 0; i < K; i++) {
@@ -32,14 +31,12 @@ public class organicCabbage {
 
             for ( int i = 0; i < K; i++ ) {
                 if (!check[i]) {
-                    result++;
-                    dfs(i);
+                    bfs(i);
                 }
             }
-            System.out.println( result);
         }
     }
-    public static void dfs(int index) {
+    public static void bfs(int index) {
         check[index] = true;
 
         Cabbage cabbage = cabbageList.get(index);
@@ -51,11 +48,13 @@ public class organicCabbage {
             if (nx >= 0 && nx < M && ny >= 0 && ny < N ) {
                 for ( int j = 0; j < K; j++) {
                     if (cabbageList.get(j).equals(tempCabbage) && !check[j]) {
-                        dfs(j);
+
                     }
                 }
             }
         }
+
+
     }
 
     static class Cabbage {
