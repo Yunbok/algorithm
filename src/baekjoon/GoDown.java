@@ -44,40 +44,6 @@ public class GoDown {
                 minDp[1] = Math.min(Math.min(beforeMinDp_0, minDp[1]), beforeMinDp_2) + x2;
             }
         }
-//        dfs(0, 1, 0, true);
-//        dfs(0, 2, 0, true);
-//        dfs(0, 0, 0, true);
-//
-//        dfs(0, 0, 0, false);
-//        dfs(0, 1, 0, false);
-//        dfs(0, 2, 0, false);
-
         System.out.println(Math.max(maxDp[0], Math.max(maxDp[1], maxDp[2])) + " " + Math.min(minDp[0], Math.min(minDp[1], minDp[2])));
-    }
-
-    private static void dfs(int i, int index, int result, boolean minFlag) {
-
-        if (i == N) {
-            if (minFlag) {
-                minResult = Math.min(minResult, result);
-            } else {
-                maxResult = Math.max(maxResult, result);
-            }
-            return;
-        }
-
-        if (index == 0) {
-            dfs(i+1, 0, result + Integer.parseInt(stairs[i][index]), minFlag);
-            dfs(i+1, 1, result + Integer.parseInt(stairs[i][index]), minFlag);
-
-        } else if (index == 1) {
-            dfs(i+1, 0, result + Integer.parseInt(stairs[i][index]), minFlag);
-            dfs(i+1, 1, result + Integer.parseInt(stairs[i][index]), minFlag);
-            dfs(i+1, 2, result + Integer.parseInt(stairs[i][index]), minFlag);
-
-        } else if (index == 2) {
-            dfs(i+1, 1, result + Integer.parseInt(stairs[i][index]), minFlag);
-            dfs(i+1, 2, result + Integer.parseInt(stairs[i][index]), minFlag);
-        }
     }
 }
